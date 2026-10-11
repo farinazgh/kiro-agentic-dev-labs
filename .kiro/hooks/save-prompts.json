@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Save prompts (local lab)",
+      "description": "Save submitted user prompts to a local JSON array for this workspace.",
+      "trigger": "UserPromptSubmit",
+      "action": {
+        "type": "command",
+        "command": "python scripts/save-prompts.py"
+      },
+      "enabled": true
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Check AWS docs tool (demo)",
+      "description": "Demonstrate a PreToolUse interception without modifying AWS resources.",
+      "trigger": "PreToolUse",
+      "matcher": "@aws-docs/search_documentation",
+      "action": {
+        "type": "agent",
+        "prompt": "This is a lab-only demonstration for the pending AWS documentation search tool call. Inspect the pending search input. If its search_phrase contains the exact token HOOK_BLOCK_DEMO, block this tool call, explain that the lab hook intercepted it, and do not use another tool to bypass the block. Otherwise allow the read-only documentation search to proceed."
+      },
+      "enabled": true
+    }
+  ]
+}
